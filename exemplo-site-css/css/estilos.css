@@ -1,0 +1,106 @@
+/* Regras CSS */
+
+/* Alterando o Box Model para todos os elementos da página */
+*, *::after,*::before {
+    box-sizing: border-box
+/* pseudo-elementos ::after e ::before
+Permite adicionar conteúdo dentro de conteúdo (Depois/Antes) */
+}
+
+h2::after {content: ":)";}
+h2::before {content: ":(";}
+/* Seletor Tag */
+body{
+    background-image: url(../imagens/fundo02.gif);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+/* Seletor Identificado/ID */
+#container {
+    background-color: white;
+
+    /* Quando combinamos largura e margem automática o efeito prático é a centralização da caixa (div) */
+    width: 70%;
+    margin: auto;
+
+    /* Espaçamento/prenchimento interno */
+    padding: 20px;
+/* Mini-Exercício 
+1)Colocar borda arredondada
+2)Sombra na Div
+*/
+border-radius: 20px;
+box-shadow:rgb(56, 4, 201) 20px 20px 10px;
+
+}
+
+/* Seletor de tag 
+Finalidade desta regra tornar as imagens flexiveis*/
+img {max-width: 100%;}
+
+h1 {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  border-bottom: solid 5px;
+  font-size: 50px;
+
+}
+
+h2 {
+    color: darkblue;
+    text-shadow: black 2px 2px 5px;
+    /* Sombra quanto maior o valor mas suave ela irá ficar */
+   
+}
+/* seletor classe */
+
+.centralizar { text-align: center;}
+/* Ao criar a classe utilizar o ponto ao usar a classe não eé necessário */
+
+.sombra-texto {text-shadow: black 3px 3px 4px;}
+.canto-arredondado {border-radius: 10px;}
+.destaque {
+    background-color: yellow;
+    border: solid 1px;
+    padding: 5px;
+}
+
+/* Seletor DESCENDENTE */
+nav a { /* Regra Inicial do link */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+
+    /* Primeiro Valor Cima/Baixo */
+    /* Segundo valor esquerda/Direita */
+    padding: 15px 30px;
+
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+    
+}
+
+/* Regra de acionamento do link */
+
+nav a:hover {
+    background-color: yellow;
+    color: blue;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+
+figure img {
+    filter: grayscale(100%);
+    transition: 2s;   
+}
+
+figure img:hover {filter: grayscale(0);}

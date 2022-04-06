@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout</title>
+<style>
+
+/* Regras de uso geral 
+o que codificamos aqui, é tudo que será usado no site não importando muito o tamanho de tela.
+Neste momento não usamos media queries*/
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Importante para o uso da medida REM */
+html { font-size: 15px;}
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+#container {
+    box-shadow: black 0 0 5px;
+    padding: 5px;
+    
+}
+
+header  {
+background-color: yellow;
+text-align: center;
+height: 110px;
+}
+
+/* CSS Reset:remoção de valores padrão */
+body,h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {font-size: 2rem;}
+
+h2 {font-size: 1.2rem;}
+
+p {font-size: 1.1rem;}
+
+nav {
+   background-color:blue;
+}
+
+article {padding: 5px;}
+
+#coluna-um {background-color: darkseagreen;}
+#coluna-dois  {background-color: orangered;}
+#coluna-tres {background-color: salmon;}
+
+footer {background-color: grey;}
+
+/* Regras para Design Responsivo */
+/* 1ª Media Query:Telas a partir de 700 px de largura */
+@media screen and (min-width:700px) { 
+    html {font-size: 18px;}
+
+    header { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    main {/* Flex Container */
+        display: flex;
+        flex-wrap: wrap; /* permite quebra de fluxo */
+    }
+
+    #coluna-um, #coluna-dois {width: 50%;} 
+}
+
+/* Crie uma nova Media Query para telas a partir de 822px, que faça as seguintes alterações: 
+
+-Tamanho Geral de fonte:20px
+-Tamanho das colunas: 33.33%
+-Limite o tamanho da container para até 1200px e também a centralize */
+
+@media screen and (min-width: 822px) {
+    html {font-size: 20px;}
+    main {
+        display: flex;
+        flex-wrap: wrap;        
+    }
+    
+    nav { width: 40%;}
+
+    /* Versão 1:usando seletores ID (específicos para este artigo) */
+    #coluna-um, #coluna-dois, #coluna-tres {width: 33.33%;}
+    
+    /* Versão 2:Usando seletor TAG (Vale para todos os artigos) */
+        article {width: 33.33%;}
+
+        #container {
+            max-width: 1200px;
+            margin: auto   /* Para de crescer */     } 
+           
+}
+
+
+</style>
+</head>
+<body>
+
+    <div id="container">
+    
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Site XYZ</h1>
+        <nav>
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+        </nav>
+    </header>
+    
+    <!-- conteudo-->
+    <main>
+        <article id="coluna-um">
+            <h2>UM</h2>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempore amet corrupti esse asperiores corporis perspiciatis fugiat qui dolore. Nesciunt id porro non expedita omnis? Nemo cum ea deleniti ullam amet dolore quasi aperiam iusto minus repellendus alias maiores suscipit harum mollitia dolores, officiis eligendi praesentium labore? Consectetur, nemo officiis.</P>
+        </article>
+
+        <article id="coluna-dois">
+            <H2>DOIS</H2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia obcaecati commodi tenetur facere libero rem accusamus dolor consectetur reiciendis quos quo, exercitationem velit animi nihil magnam necessitatibus autem aperiam atque repudiandae vero praesentium tempore asperiores! Deleniti, dicta. Accusamus, necessitatibus atque eaque libero vero illum ipsa laboriosam est consequatur sequi quam.</p>
+        </article>
+
+        <article id="coluna-tres">
+            <H2>TRÊS</H2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus explicabo ducimus porro eveniet voluptatum? Inventore laborum consectetur quod ex veritatis quo id pariatur voluptas assumenda recusandae, molestias, similique repudiandae, laboriosam quae temporibus neque est! Consequuntur praesentium dolor asperiores consequatur? Tempore blanditiis, minus temporibus quos sequi magni illum debitis ullam fugiat!</p>
+        </article>
+    </main>
+
+    <!-- rodapé -->
+    <footer>
+        <p> Layout de Exemplo</p>
+    </footer>
+</div>
+
+</body>
+</html>

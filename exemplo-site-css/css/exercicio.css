@@ -1,0 +1,33 @@
+*, *::after,*::before {
+    box-sizing: border-box
+}
+
+
+.principais-editores img{
+    border: thin solid;
+    padding: 5px;
+    margin: 0px 10px 10px 0;
+    color: red;
+    height: 15%;
+    width: 15%;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 30px;
+    }
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    border: solid;
+    border-color: rgb(25, 0, 255);
+
+
+}
+
+
+p { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: rgb(128, 4, 4);
+}
